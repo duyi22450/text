@@ -1,0 +1,4 @@
+import os
+
+env = Environment(CC = 'gcc')
+env.Program('hello.c')

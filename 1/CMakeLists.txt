@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.15)
+set(CMAKE_GENERATOR "Unix Makefiles")
+project (Tutorial VERSION 1.0)
+configure_file(TutorialConfig.h.in TutorialConfig.h)
+set(SRC_LIST tutorial.cpp)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+target_include_directories(${PROJECT_NAME} PUBLIC
+                        ${PROJECT_BINARY_DIR})
+option(USE_MYMATH "Use tutorial provided math implementation" ON)
